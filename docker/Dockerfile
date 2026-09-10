@@ -1,4 +1,4 @@
-FROM debian:bullseye AS build-stage
+FROM ubuntu:jammy AS build-stage
 
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
