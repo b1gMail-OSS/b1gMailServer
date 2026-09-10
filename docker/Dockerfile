@@ -1,10 +1,9 @@
 FROM debian:bullseye AS build-stage
 
 ENV DEBIAN_FRONTEND=noninteractive
-
-RUN apt-get update &&
-apt-get install -y build-essential git cmake autoconf libtool pkg-config
-zlib1g-dev libncurses5-dev php-cli wget
+RUN apt-get update && \
+  apt-get install -y build-essential git cmake autoconf libtool pkg-config \
+  zlib1g-dev libncurses5-dev php-cli wget
 
 RUN mkdir -p /buildenv/include
 
