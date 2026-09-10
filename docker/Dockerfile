@@ -18,9 +18,9 @@ RUN wget https://invisible-mirror.net/archives/dialog/dialog-1.3-20160828.tgz
 RUN tar xzf dialog-1.3-20160828.tgz
 RUN cd dialog-1.3-20160828 && ./configure --disable-widec --prefix=/buildenv && make -j && make install && cp dlg_config.h dialog.h /buildenv/include && cd ..
 
-RUN wget https://dlm.mariadb.com/4516944/Connectors/c/connector-c-3.4.8/mariadb-connector-c-3.4.8-src.tar.gz
-RUN tar xzf mariadb-connector-c-3.4.8-src.tar.gz
-RUN cd mariadb-connector-c-3.4.8-src && mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/buildenv -DOPENSSL_ROOT_DIR=/buildenv .. && make -j && make install && cd ..
+RUN wget https://dlm.mariadb.com/4751056/Connectors/c/connector-c-3.4.9/mariadb-connector-c-3.4.9-src.tar.gz
+RUN tar xzf mariadb-connector-c-3.4.9-src.tar.gz
+RUN cd mariadb-connector-c-3.4.9-src && mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/buildenv -DOPENSSL_ROOT_DIR=/buildenv .. && make -j && make install && cd ..
 
 RUN wget http://ftp.cs.stanford.edu/pub/exim/pcre/pcre-8.45.tar.gz
 RUN tar xzf pcre-8.45.tar.gz
