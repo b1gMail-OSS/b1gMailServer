@@ -196,7 +196,7 @@ void Utils::UpgradeUserPasswordIfNeeded(int userID, const string &passwordPlain,
     PasswordHashPrefs prefs = LoadPasswordHashPrefs();
     string strNewHash;
 
-    if(prefs.algo == "argon2id")
+    /*if(prefs.algo == "argon2id")
     {
         if(!CreateArgon2idHash(passwordPlain, prefs.cost, strNewHash))
             return;
@@ -209,5 +209,5 @@ void Utils::UpgradeUserPasswordIfNeeded(int userID, const string &passwordPlain,
 
     db->Query("UPDATE bm60_users SET passwort='%q', passwort_salt='' WHERE id='%d'",
         strNewHash.c_str(),
-        userID);
+        userID);*/
 }
